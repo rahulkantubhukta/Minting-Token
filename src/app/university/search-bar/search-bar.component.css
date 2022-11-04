@@ -22,4 +22,12 @@ header, .main-header, .search-block {
     outline: none;
     padding-left: 10px;
   }
+  .gen-cert-btn {
+    color: white; 
+    padding: 10px 40px;
+    border-radius: 5%;
+    background-color: #4a63e0;
+    text-decoration: none;
+  }
+
   

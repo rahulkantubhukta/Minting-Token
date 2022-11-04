@@ -1,3 +1,5 @@
+<app-student-details [studentItemDetails]="studentDetails" *ngIf="isGenCertBtnClicked"></app-student-details>
+<ng-container *ngIf="!isGenCertBtnClicked">
 <div>
     <app-file-upload></app-file-upload>
 </div>
@@ -36,6 +38,7 @@
   <div mat-line>Name: {{item.name}}</div>
 	<div mat-line>Graduation_Date: {{item.date_of_graduation}}</div>
   <div mat-line>Department_Code: {{item.dept_code}}</div>
+  <button class="btn btn-primary" (click)="gotoStudentDetails(item)">Generate Certificate</button>
 	</mat-list-item>
   <mat-list-item *ngIf="(list | filter: searchText).length === 0">
     <mat-icon mat-list-avatar>error</mat-icon>
@@ -44,3 +47,5 @@
   </mat-list-item>
 </mat-list>
 </div>
+</ng-container>
+

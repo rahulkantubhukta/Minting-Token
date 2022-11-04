@@ -7,7 +7,7 @@
   />
 
   <span class="error-message" *ngIf="!isFileSelected">No File Selected</span>
-  <button (click)="onUpload()" class="btn btn-success mt-5">Upload</button>
+  <button *ngIf="!loading" (click)="onUpload()" class="btn btn-success mt-5">Upload</button>
 </div>
 
 <!-- Shareable short link of  uploaded file -->

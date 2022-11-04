@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UniversityComponent implements OnInit {
 
+  isCreateTokenBtnClicked: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -14,5 +16,9 @@ export class UniversityComponent implements OnInit {
 
   search(value: any){
     console.log(value);
+  }
+
+  genToken() {
+    this.isCreateTokenBtnClicked = true;
   }
 }

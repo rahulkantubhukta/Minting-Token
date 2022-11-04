@@ -14,6 +14,10 @@ export class SearchBarComponent implements OnInit {
   @ViewChild('searchbar')
   searchbar!: ElementRef;
 
+  isGenCertBtnClicked: boolean = false;
+
+  studentDetails: any;
+
   constructor() {}
 
   ngOnInit(): void {
@@ -24,10 +28,15 @@ export class SearchBarComponent implements OnInit {
     this.toggleSearch = true;
     this.searchbar.nativeElement.focus();
   }
-  
+
   searchClose() {
     this.searchText = '';
     this.toggleSearch = false;
+  }
+
+  gotoStudentDetails(details: any) {
+    this.isGenCertBtnClicked = true;
+    this.studentDetails = details;
   }
 
 }
