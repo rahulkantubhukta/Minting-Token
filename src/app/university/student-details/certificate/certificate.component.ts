@@ -25,7 +25,6 @@ export class CertificateComponent implements OnInit, OnChanges {
         );
         downloadBtn.href = cvs ? cvs.toDataURL('image/jpeg') : '';
         downloadBtn.download = 'certificate.jpeg';
-        document.body.append(canvas);
     });
   }
 }

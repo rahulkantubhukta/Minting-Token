@@ -40,18 +40,20 @@
 
       <label for="zip">Zip Code: </label>
       <input id="zip" type="text" formControlName="zip" />
-
-      <input type="reset" />
     </div>
 
     <p>Complete the form to enable button.</p>
-    <button
-      class="btn btn-primary"
-      type="submit"
-      [disabled]="!profileForm.valid"
-    >
-      Submit
-    </button>
+    <div>
+      <button
+        class="btn btn-success"
+        type="submit"
+        [disabled]="!profileForm.valid"
+      >
+        Submit
+      </button>
+
+      <input class="btn btn-primary ml-10" type="reset" />
+    </div>
   </form>
 </div>
 
