@@ -13,7 +13,11 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatRadioModule} from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { SearchBarComponent } from './university/search-bar/search-bar.component';
 import { FileUploadComponent } from './university/file-upload/file-upload.component';
@@ -45,7 +49,11 @@ import { CertificateComponent } from './university/student-details/certificate/c
     MatButtonModule,
     MatInputModule,
     MatListModule,
+    MatCardModule,
     MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule,
     BrowserAnimationsModule,
     HttpClientModule,
   ],
