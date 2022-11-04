@@ -24,15 +24,13 @@ export class StudentDetailsComponent implements OnInit {
   this.profileForm = this.fb.group({
     id: [this.studentDetails.id, Validators.required],
     name:[this.studentDetails.name, Validators.required],
-    dateOfGraduation: [this.studentDetails.date_of_graduation,Validators.required],
+    dateOfBirth:['',Validators.required],
+    dateOfGraduation: [this.studentDetails.date_of_graduation,Validators.required], 
+    course:['', Validators.required],
+    gender:[''],
     cgpa:['', Validators.required],
     departmentName:['',Validators.required],
-    address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: ['']
-    }),
+    address: ['']
   });
 }
 

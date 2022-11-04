@@ -1,67 +1,134 @@
 <div class="student-details-form" *ngIf="!isSubmitBtnClicked">
-  <h1>Please Enter the Student Details</h1>
-  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-    <label for="student-id">Student Id: </label>
-    <input id="student-id" type="number" formControlName="id" required />
+  <form
+    [formGroup]="profileForm"
+    class="form-container"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title
+          >Please Check and Enter the Student Details</mat-card-title
+        >
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="full-width">
+              <input formControlName="id" matInput placeholder="Student Id" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="full-width">
+              <input
+                formControlName="name"
+                matInput
+                placeholder="Student Name"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Select Date Of Birth</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                formControlName="dateOfBirth"
+                placeholder="Student Date Of Birth"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Select Date Of Graduation</mat-label>
+              <input
+                matInput
+                [matDatepicker]="pickerGrad"
+                formControlName="dateOfGraduation"
+                placeholder="Student Date Of Graduation"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="pickerGrad"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #pickerGrad></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="full-width">
+              <input
+                formControlName="cgpa"
+                matInput
+                placeholder="Student CGPA"
+              />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="full-width">
+              <input
+                formControlName="departmentName"
+                matInput
+                placeholder="Department Name"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field class="full-width">
+              <input
+                formControlName="course"
+                matInput
+                placeholder="Student Course Name"
+              />
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field class="full-width">
+              <textarea
+                formControlName="address"
+                matInput
+                placeholder="Student Address"
+              ></textarea>
+            </mat-form-field>
+          </div>
+        </div>
 
-    <label for="name">Student Name: </label>
-    <input id="name" type="text" formControlName="name" required />
-
-    <label for="graduation-date">Graduation Date: </label>
-    <input
-      id="date-of-graduation"
-      type="date"
-      formControlName="dateOfGraduation"
-      required
-    />
-
-    <label for="cgpa">CGPA: </label>
-    <input id="cgpa" type="number" formControlName="cgpa" required />
-
-    <label for="department-name">Department Name: </label>
-    <input
-      id="department-name"
-      type="text"
-      formControlName="departmentName"
-      required
-    />
-
-    <div formGroupName="address">
-      <h2>Address</h2>
-
-      <label for="street">Street: </label>
-      <input id="street" type="text" formControlName="street" />
-
-      <label for="city">City: </label>
-      <input id="city" type="text" formControlName="city" />
-
-      <label for="state">State: </label>
-      <input id="state" type="text" formControlName="state" />
-
-      <label for="zip">Zip Code: </label>
-      <input id="zip" type="text" formControlName="zip" />
-    </div>
-
-    <p>Complete the form to enable button.</p>
-    <div>
-      <button
-        class="btn btn-success"
-        type="submit"
-        [disabled]="!profileForm.valid"
-      >
-        Submit
-      </button>
-
-      <input class="btn btn-primary ml-10" type="reset" />
-    </div>
+        <div class="row">
+          <div class="col-md-12">
+            <mat-radio-group formControlName="gender">
+              <mat-radio-button value="male"> Male </mat-radio-button>
+              <mat-radio-button class="ml-10" value="female">
+                Female
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!profileForm.valid"
+        >
+          Submit
+        </button>
+      </mat-card-actions>
+    </mat-card>
   </form>
 </div>
 
 <div *ngIf="isSubmitBtnClicked">
   <app-certificate [data]="profileForm.value"></app-certificate>
 </div>
-
-<hr />
 
 <!-- <p>Form Value: {{ profileForm.value | json }}</p>
 
