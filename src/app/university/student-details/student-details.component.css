@@ -13,4 +13,11 @@
   .ml-10 {
     margin-left: 10px;
   }
+
+  .mat-card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
   
