@@ -4,7 +4,6 @@
 }
 .template {
     color: black;
-    display: table;
     font-family: Georgia, serif;
     font-size: 24px;
     text-align: center;
@@ -37,4 +36,8 @@
 }
 .reason {
     margin: 20px;
+}
+.download-btn {
+    text-align: left;
+    margin-top: 10px;
 }

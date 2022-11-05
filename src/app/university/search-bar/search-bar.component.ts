@@ -18,6 +18,8 @@ export class SearchBarComponent implements OnInit {
 
   studentDetails: any;
 
+  selectedOption: string | undefined;
+
   constructor() {}
 
   ngOnInit(): void {

@@ -29,5 +29,13 @@ header, .main-header, .search-block {
     background-color: #4a63e0;
     text-decoration: none;
   }
-
+  .data-selection-option {
+    margin:3rem 2rem 1rem 2rem;
+  }
+  mat-radio-button {
+    margin: 10px;
+  }
+  .fw-900 {
+    font-weight:900
+  }
   
